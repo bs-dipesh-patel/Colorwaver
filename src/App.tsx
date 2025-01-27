@@ -1,5 +1,5 @@
 import React, {useCallback, useEffect, useMemo, useState} from 'react';
-import {AppState, Dimensions, Platform, StyleSheet, View} from 'react-native';
+import {AppState, Dimensions, Platform, StyleSheet, Text, View} from 'react-native';
 import {
   Camera,
   CameraProps,
@@ -40,7 +40,7 @@ const SCREEN_WIDTH = Dimensions.get('window').width;
 const SAFE_BOTTOM = StaticSafeAreaInsets.safeAreaInsetsBottom;
 
 const DEFAULT_COLOR = '#000000';
-const MAX_FRAME_PROCESSOR_FPS = 3;
+const MAX_FRAME_PROCESSOR_FPS = 2;
 
 const TILE_SIZE = SCREEN_WIDTH / 4;
 const ACTIVE_TILE_HEIGHT = TILE_SIZE * 1.3 + SAFE_BOTTOM;
@@ -49,6 +49,47 @@ const ACTIVE_CONTAINER_SCALE = 0.95;
 const ACTIVE_CONTAINER_PADDING = TILE_SIZE - TILE_SIZE * ACTIVE_TILE_SCALE;
 const TRANSLATE_Y_ACTIVE =
   (SCREEN_WIDTH - SCREEN_WIDTH * ACTIVE_CONTAINER_SCALE) / 2 + SAFE_BOTTOM;
+
+  const styles = StyleSheet.create({
+    container: {
+      flex: 1,
+    },
+    blackscreen: {
+      flex: 1,
+      backgroundColor: 'black',
+    },
+    camera: {
+      flex: 1,
+    },
+    palettes: {
+      position: 'absolute',
+      left: 0,
+      right: 0,
+      bottom: 0,
+      flexDirection: 'row',
+      backgroundColor: IS_IOS ? 'transparent' : 'white',
+    },
+    // Add these styles
+    headerTextContainer: {
+      position: 'absolute',
+      top: 20, // Adjust the margin from the top as needed
+      left: 0,
+      right: 0,
+      alignItems: 'center', // Center horizontally
+      zIndex: 1, // Ensure it is above other elements
+    },
+    headerText: {
+      top: 20,
+      fontSize: 16,
+      fontWeight: '600',
+      color: 'white',
+      textAlign: 'center',
+      backgroundColor: 'rgba(0, 0, 0, 0.5)', // Semi-transparent background for visibility
+      paddingVertical: 15,
+      paddingHorizontal: 15,
+      borderRadius: 10, // Rounded corners
+    },
+  });
 
 export function App() {
   const [frameProcessorFps, setFrameProcessorFps] = useState(3);
@@ -67,6 +108,11 @@ export function App() {
   const backgroundColor = useSharedValue(DEFAULT_COLOR);
   const detailColor = useSharedValue(DEFAULT_COLOR);
 
+  const primaryPercentage = useSharedValue(0);
+  const secondaryPercentage = useSharedValue(0);
+  const backgroundPercentage = useSharedValue(0);
+  const detailPercentage = useSharedValue(0);
+
   const onCameraError = useCallback((error: CameraRuntimeError) => {
     console.error(`${error.code}: ${error.message}`, error.cause);
   }, []);
@@ -84,33 +130,40 @@ export function App() {
       }),
     [isHolding],
   );
-  const palettesStyle = useAnimatedStyle(
-    () => ({
-      transform: [
-        {
-          scale: interpolate(
-            isActiveAnimation.value,
-            [0, 1],
-            [1, ACTIVE_CONTAINER_SCALE],
-          ),
-        },
-        {
-          translateY: interpolate(
-            isActiveAnimation.value,
-            [0, 1],
-            [0, -TRANSLATE_Y_ACTIVE],
-          ),
-        },
-      ],
-      padding: interpolate(
-        isActiveAnimation.value,
-        [0, 1],
-        [0, ACTIVE_CONTAINER_PADDING],
-      ),
-      borderRadius: interpolate(isActiveAnimation.value, [0, 1], [0, 25]),
-    }),
-    [isActiveAnimation],
-  );
+  // const palettesStyle = useAnimatedStyle(
+  //   () => ({
+  //     transform: [
+  //       {
+  //         scale: interpolate(
+  //           isActiveAnimation.value,
+  //           [0, 1],
+  //           [1, ACTIVE_CONTAINER_SCALE],
+  //         ),
+  //       },
+  //       {
+  //         translateY: interpolate(
+  //           isActiveAnimation.value,
+  //           [0, 1],
+  //           [0, -TRANSLATE_Y_ACTIVE],
+  //         ),
+  //       },
+  //     ],
+  //     padding: interpolate(
+  //       isActiveAnimation.value,
+  //       [0, 1],
+  //       [0, ACTIVE_CONTAINER_PADDING],
+  //     ),
+  //     borderRadius: interpolate(isActiveAnimation.value, [0, 1], [0, 25]),
+  //   }),
+  //   [isActiveAnimation],
+  // );
+  const palettesStyle = useAnimatedStyle(() => ({
+    transform: [
+      { scale: interpolate(isActiveAnimation.value, [0, 1], [1, 0.95]) },
+    ],
+    borderRadius: interpolate(isActiveAnimation.value, [0, 1], [0, 25]),
+  }));
+  
   const colorTileStyle = useAnimatedStyle(
     () => ({
       borderRadius: interpolate(isActiveAnimation.value, [0, 1], [0, 15]),
@@ -139,22 +192,36 @@ export function App() {
   );
 
   const frameProcessor = useFrameProcessor(
-    frame => {
-      'worklet';
-      if (isHolding.value) {
-        // handbrake
-        return;
-      }
-      const colors = getColorPalette(frame, 'lowest');
-      if (colors == null) {
-        return;
-      }
-      primaryColor.value = colors.primary;
-      secondaryColor.value = colors.secondary;
-      backgroundColor.value = colors.background;
-      detailColor.value = colors.detail;
-    },
-    [isHolding],
+    (() => {
+      let lastUpdateTime = 0;
+      const debounceInterval = 200; // Update every 200ms (adjust as needed)
+  
+      return frame => {
+        'worklet';
+        const currentTime = Date.now();
+        if (currentTime - lastUpdateTime < debounceInterval) return;
+  
+        lastUpdateTime = currentTime;
+  
+        const colors = getColorPalette(frame, 'lowest');
+        if (!colors) return;
+  
+        const { primary, secondary, background, detail } = colors;
+  
+        primaryColor.value = primary.color || '#000000';
+        primaryPercentage.value = primary.percentage || 0;
+  
+        secondaryColor.value = secondary.color || '#000000';
+        secondaryPercentage.value = secondary.percentage || 0;
+  
+        backgroundColor.value = background.color || '#000000';
+        backgroundPercentage.value = background.percentage || 0;
+  
+        detailColor.value = detail.color || '#000000';
+        detailPercentage.value = detail.percentage || 0;
+      };
+    })(),
+    [primaryColor, primaryPercentage, secondaryColor, secondaryPercentage, backgroundColor, backgroundPercentage, detailColor, detailPercentage],
   );
 
   const onTapBegin = useWorkletCallback(() => {
@@ -207,6 +274,11 @@ export function App() {
       minPointers={1}
       maxDurationMs={999999}>
       <Reanimated.View style={styles.container}>
+        <Reanimated.View style={styles.headerTextContainer}>
+          <Text style={styles.headerText}>
+            Point your camera and wait for 2 seconds for color identification to happen
+          </Text>
+        </Reanimated.View>
         <AnimatedStatusBar
           barStyle="light-content"
           animated={true}
@@ -225,58 +297,28 @@ export function App() {
           }
           animatedProps={cameraAnimatedProps}
         />
-        <BackgroundView
-          blurAmount={25}
-          blurRadius={25}
-          blurType="material"
-          style={[styles.palettes, palettesStyle]}>
-          <ColorTile
-            name="Primary"
-            color={primaryColor}
-            animationDuration={colorAnimationDuration}
-            animatedStyle={colorTileStyle}
-          />
-          <ColorTile
-            name="Secondary"
-            color={secondaryColor}
-            animationDuration={colorAnimationDuration}
-            animatedStyle={colorTileStyle}
-          />
-          <ColorTile
-            name="Background"
-            color={backgroundColor}
-            animationDuration={colorAnimationDuration}
-            animatedStyle={colorTileStyle}
-          />
-          <ColorTile
-            name="Detail"
-            color={detailColor}
-            animationDuration={colorAnimationDuration}
-            animatedStyle={colorTileStyle}
-          />
+        <BackgroundView style={[styles.palettes, palettesStyle]}>
+          {[
+            { name: 'Color 1', color: primaryColor, percentage: primaryPercentage },
+            { name: 'Color 2', color: secondaryColor, percentage: secondaryPercentage },
+            { name: 'Color 3', color: detailColor, percentage: detailPercentage },
+            { name: 'Color 4', color: backgroundColor, percentage: backgroundPercentage },
+          ]
+            // Sort colors by percentage in descending order
+            .sort((a, b) => a.percentage.value - b.percentage.value)
+            // Ensure the labels stay consistent but align with the sorted data
+            .map((item, index) => (
+              <ColorTile
+                key={index}
+                name={`Color ${index + 1}`} // Ensures the name stays consistent
+                color={item.color} // Sorted color
+                percentage={item.percentage} // Sorted percentage
+                animationDuration={colorAnimationDuration}
+                animatedStyle={colorTileStyle}
+              />
+            ))}
         </BackgroundView>
       </Reanimated.View>
     </TapGestureHandler>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-  blackscreen: {
-    flex: 1,
-    backgroundColor: 'black',
-  },
-  camera: {
-    flex: 1,
-  },
-  palettes: {
-    position: 'absolute',
-    left: 0,
-    right: 0,
-    bottom: 0,
-    flexDirection: 'row',
-    backgroundColor: IS_IOS ? 'transparent' : 'white',
-  },
-});
