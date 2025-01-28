@@ -305,7 +305,7 @@ export function App() {
             { name: 'Color 4', color: backgroundColor, percentage: backgroundPercentage },
           ]
             // Sort colors by percentage in descending order
-            .sort((a, b) => a.percentage.value - b.percentage.value)
+            .sort((a, b) => b.percentage.value - a.percentage.value)
             // Ensure the labels stay consistent but align with the sorted data
             .map((item, index) => (
               <ColorTile

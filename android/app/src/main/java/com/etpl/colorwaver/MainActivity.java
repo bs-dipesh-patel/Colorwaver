@@ -1,4 +1,4 @@
-package com.mrousavy.colorwaver;
+package com.etpl.colorwaver;
 
 import com.facebook.react.ReactActivity;
 import com.facebook.react.ReactActivityDelegate;

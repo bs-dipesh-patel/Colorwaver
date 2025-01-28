@@ -136,7 +136,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.mrousavy.colorwaver"
+        applicationId "com.etpl.colorwaver"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1

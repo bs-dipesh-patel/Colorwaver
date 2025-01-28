@@ -1,4 +1,4 @@
-package com.mrousavy.colorwaver;
+package com.etpl.colorwaver;
 
 import android.app.Application;
 import android.content.Context;

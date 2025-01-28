@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-               BuildableName = "Colorwaver.app"
-               BlueprintName = "Colorwaver"
-               ReferencedContainer = "container:Colorwaver.xcodeproj">
+               BuildableName = "ColorWaverETPLApp.app"
+               BlueprintName = "ColorWaverETPLApp"
+               ReferencedContainer = "container:ColorWaverETPLApp.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "00E356ED1AD99517003FC87E"
-               BuildableName = "ColorwaverTests.xctest"
-               BlueprintName = "ColorwaverTests"
-               ReferencedContainer = "container:Colorwaver.xcodeproj">
+               BuildableName = "ColorWaverETPLAppTests.xctest"
+               BlueprintName = "ColorWaverETPLAppTests"
+               ReferencedContainer = "container:ColorWaverETPLApp.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -55,9 +55,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "Colorwaver.app"
-            BlueprintName = "Colorwaver"
-            ReferencedContainer = "container:Colorwaver.xcodeproj">
+            BuildableName = "ColorWaverETPLApp.app"
+            BlueprintName = "ColorWaverETPLApp"
+            ReferencedContainer = "container:ColorWaverETPLApp.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -72,9 +72,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "Colorwaver.app"
-            BlueprintName = "Colorwaver"
-            ReferencedContainer = "container:Colorwaver.xcodeproj">
+            BuildableName = "ColorWaverETPLApp.app"
+            BlueprintName = "ColorWaverETPLApp"
+            ReferencedContainer = "container:ColorWaverETPLApp.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

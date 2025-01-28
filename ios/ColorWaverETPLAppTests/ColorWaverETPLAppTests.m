@@ -7,11 +7,11 @@
 #define TIMEOUT_SECONDS 600
 #define TEXT_TO_LOOK_FOR @"Welcome to React"
 
-@interface ColorwaverTests : XCTestCase
+@interface ColorWaverETPLAppTests : XCTestCase
 
 @end
 
-@implementation ColorwaverTests
+@implementation ColorWaverETPLAppTests
 
 - (BOOL)findSubviewInView:(UIView *)view matching:(BOOL(^)(UIView *view))test
 {

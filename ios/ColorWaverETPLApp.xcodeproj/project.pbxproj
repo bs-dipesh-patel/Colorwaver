@@ -7,13 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		00E356F31AD99517003FC87E /* ColorwaverTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* ColorwaverTests.m */; };
+		00E356F31AD99517003FC87E /* ColorWaverETPLAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* ColorWaverETPLAppTests.m */; };
 		13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
-		6B79419A8D38A90A28EC6FCB /* libPods-Colorwaver-ColorwaverTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 217F752165D9DB39E4D42171 /* libPods-Colorwaver-ColorwaverTests.a */; };
+		6B79419A8D38A90A28EC6FCB /* libPods-ColorWaverETPLApp-ColorWaverETPLAppTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 217F752165D9DB39E4D42171 /* libPods-ColorWaverETPLApp-ColorWaverETPLAppTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
-		84529C4B6F306BEAC4C412A3 /* libPods-Colorwaver.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 06F2C483C1AF5A46660C7C0A /* libPods-Colorwaver.a */; };
+		8442D29A2D47BE3100853F0B /* main.jsbundle in Resources */ = {isa = PBXBuildFile; fileRef = 8442D2992D47BE3100853F0B /* main.jsbundle */; };
+		84529C4B6F306BEAC4C412A3 /* libPods-ColorWaverETPLApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 06F2C483C1AF5A46660C7C0A /* libPods-ColorWaverETPLApp.a */; };
 		B869228426DA1F9100186D7D /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = B869228326DA1F9100186D7D /* File.swift */; };
 		B869228626DA27AC00186D7D /* PaletteFrameProcessorPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = B869228526DA27AC00186D7D /* PaletteFrameProcessorPlugin.m */; };
 		B869228826DA29AA00186D7D /* PaletteFrameProcessorPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = B869228726DA29AA00186D7D /* PaletteFrameProcessorPlugin.swift */; };
@@ -26,32 +27,33 @@
 			containerPortal = 83CBB9F71A601CBA00E9B192 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 13B07F861A680F5B00A75B9A;
-			remoteInfo = Colorwaver;
+			remoteInfo = ColorWaverETPLApp;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		00E356EE1AD99517003FC87E /* ColorwaverTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ColorwaverTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		00E356EE1AD99517003FC87E /* ColorWaverETPLAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ColorWaverETPLAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		00E356F21AD99517003FC87E /* ColorwaverTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ColorwaverTests.m; sourceTree = "<group>"; };
-		06F2C483C1AF5A46660C7C0A /* libPods-Colorwaver.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Colorwaver.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		0A424AEB40DE6E9DD1BD0AB3 /* Pods-Colorwaver.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Colorwaver.release.xcconfig"; path = "Target Support Files/Pods-Colorwaver/Pods-Colorwaver.release.xcconfig"; sourceTree = "<group>"; };
-		13B07F961A680F5B00A75B9A /* Colorwaver.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Colorwaver.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = Colorwaver/AppDelegate.h; sourceTree = "<group>"; };
-		13B07FB01A68108700A75B9A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = Colorwaver/AppDelegate.m; sourceTree = "<group>"; };
-		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = Colorwaver/Images.xcassets; sourceTree = "<group>"; };
-		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Colorwaver/Info.plist; sourceTree = "<group>"; };
-		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = Colorwaver/main.m; sourceTree = "<group>"; };
-		217F752165D9DB39E4D42171 /* libPods-Colorwaver-ColorwaverTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Colorwaver-ColorwaverTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		44AE187957472DD329CE61E0 /* Pods-Colorwaver-ColorwaverTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Colorwaver-ColorwaverTests.debug.xcconfig"; path = "Target Support Files/Pods-Colorwaver-ColorwaverTests/Pods-Colorwaver-ColorwaverTests.debug.xcconfig"; sourceTree = "<group>"; };
-		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = Colorwaver/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		B6FA5584F8C20D133B0A1619 /* Pods-Colorwaver.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Colorwaver.debug.xcconfig"; path = "Target Support Files/Pods-Colorwaver/Pods-Colorwaver.debug.xcconfig"; sourceTree = "<group>"; };
-		B869228226DA1F9100186D7D /* Colorwaver-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Colorwaver-Bridging-Header.h"; sourceTree = "<group>"; };
+		00E356F21AD99517003FC87E /* ColorWaverETPLAppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ColorWaverETPLAppTests.m; sourceTree = "<group>"; };
+		06F2C483C1AF5A46660C7C0A /* libPods-ColorWaverETPLApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ColorWaverETPLApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0A424AEB40DE6E9DD1BD0AB3 /* Pods-ColorWaverETPLApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ColorWaverETPLApp.release.xcconfig"; path = "Target Support Files/Pods-ColorWaverETPLApp/Pods-ColorWaverETPLApp.release.xcconfig"; sourceTree = "<group>"; };
+		13B07F961A680F5B00A75B9A /* ColorWaverETPLApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ColorWaverETPLApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = ColorWaverETPLApp/AppDelegate.h; sourceTree = "<group>"; };
+		13B07FB01A68108700A75B9A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = ColorWaverETPLApp/AppDelegate.m; sourceTree = "<group>"; };
+		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = ColorWaverETPLApp/Images.xcassets; sourceTree = "<group>"; };
+		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = ColorWaverETPLApp/Info.plist; sourceTree = "<group>"; };
+		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = ColorWaverETPLApp/main.m; sourceTree = "<group>"; };
+		217F752165D9DB39E4D42171 /* libPods-ColorWaverETPLApp-ColorWaverETPLAppTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ColorWaverETPLApp-ColorWaverETPLAppTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		44AE187957472DD329CE61E0 /* Pods-ColorWaverETPLApp-ColorWaverETPLAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ColorWaverETPLApp-ColorWaverETPLAppTests.debug.xcconfig"; path = "Target Support Files/Pods-ColorWaverETPLApp-ColorWaverETPLAppTests/Pods-ColorWaverETPLApp-ColorWaverETPLAppTests.debug.xcconfig"; sourceTree = "<group>"; };
+		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = ColorWaverETPLApp/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		8442D2992D47BE3100853F0B /* main.jsbundle */ = {isa = PBXFileReference; lastKnownFileType = text; path = main.jsbundle; sourceTree = "<group>"; };
+		B6FA5584F8C20D133B0A1619 /* Pods-ColorWaverETPLApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ColorWaverETPLApp.debug.xcconfig"; path = "Target Support Files/Pods-ColorWaverETPLApp/Pods-ColorWaverETPLApp.debug.xcconfig"; sourceTree = "<group>"; };
+		B869228226DA1F9100186D7D /* ColorWaverETPLApp-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ColorWaverETPLApp-Bridging-Header.h"; sourceTree = "<group>"; };
 		B869228326DA1F9100186D7D /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 		B869228526DA27AC00186D7D /* PaletteFrameProcessorPlugin.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PaletteFrameProcessorPlugin.m; sourceTree = "<group>"; };
 		B869228726DA29AA00186D7D /* PaletteFrameProcessorPlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaletteFrameProcessorPlugin.swift; sourceTree = "<group>"; };
 		B89B4A6C26DA48ED0063A3DB /* UIColor+hexString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+hexString.swift"; sourceTree = "<group>"; };
-		DDF131CE188414F6F7234528 /* Pods-Colorwaver-ColorwaverTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Colorwaver-ColorwaverTests.release.xcconfig"; path = "Target Support Files/Pods-Colorwaver-ColorwaverTests/Pods-Colorwaver-ColorwaverTests.release.xcconfig"; sourceTree = "<group>"; };
+		DDF131CE188414F6F7234528 /* Pods-ColorWaverETPLApp-ColorWaverETPLAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ColorWaverETPLApp-ColorWaverETPLAppTests.release.xcconfig"; path = "Target Support Files/Pods-ColorWaverETPLApp-ColorWaverETPLAppTests/Pods-ColorWaverETPLApp-ColorWaverETPLAppTests.release.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -60,7 +62,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6B79419A8D38A90A28EC6FCB /* libPods-Colorwaver-ColorwaverTests.a in Frameworks */,
+				6B79419A8D38A90A28EC6FCB /* libPods-ColorWaverETPLApp-ColorWaverETPLAppTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,20 +70,20 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				84529C4B6F306BEAC4C412A3 /* libPods-Colorwaver.a in Frameworks */,
+				84529C4B6F306BEAC4C412A3 /* libPods-ColorWaverETPLApp.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		00E356EF1AD99517003FC87E /* ColorwaverTests */ = {
+		00E356EF1AD99517003FC87E /* ColorWaverETPLAppTests */ = {
 			isa = PBXGroup;
 			children = (
-				00E356F21AD99517003FC87E /* ColorwaverTests.m */,
+				00E356F21AD99517003FC87E /* ColorWaverETPLAppTests.m */,
 				00E356F01AD99517003FC87E /* Supporting Files */,
 			);
-			path = ColorwaverTests;
+			path = ColorWaverETPLAppTests;
 			sourceTree = "<group>";
 		};
 		00E356F01AD99517003FC87E /* Supporting Files */ = {
@@ -95,15 +97,15 @@
 		10A1511C1FC5EBB00BE43BB0 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				B6FA5584F8C20D133B0A1619 /* Pods-Colorwaver.debug.xcconfig */,
-				0A424AEB40DE6E9DD1BD0AB3 /* Pods-Colorwaver.release.xcconfig */,
-				44AE187957472DD329CE61E0 /* Pods-Colorwaver-ColorwaverTests.debug.xcconfig */,
-				DDF131CE188414F6F7234528 /* Pods-Colorwaver-ColorwaverTests.release.xcconfig */,
+				B6FA5584F8C20D133B0A1619 /* Pods-ColorWaverETPLApp.debug.xcconfig */,
+				0A424AEB40DE6E9DD1BD0AB3 /* Pods-ColorWaverETPLApp.release.xcconfig */,
+				44AE187957472DD329CE61E0 /* Pods-ColorWaverETPLApp-ColorWaverETPLAppTests.debug.xcconfig */,
+				DDF131CE188414F6F7234528 /* Pods-ColorWaverETPLApp-ColorWaverETPLAppTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
 		};
-		13B07FAE1A68108700A75B9A /* Colorwaver */ = {
+		13B07FAE1A68108700A75B9A /* ColorWaverETPLApp */ = {
 			isa = PBXGroup;
 			children = (
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
@@ -113,20 +115,20 @@
 				81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */,
 				13B07FB71A68108700A75B9A /* main.m */,
 				B869228326DA1F9100186D7D /* File.swift */,
-				B869228226DA1F9100186D7D /* Colorwaver-Bridging-Header.h */,
+				B869228226DA1F9100186D7D /* ColorWaverETPLApp-Bridging-Header.h */,
 				B869228526DA27AC00186D7D /* PaletteFrameProcessorPlugin.m */,
 				B869228726DA29AA00186D7D /* PaletteFrameProcessorPlugin.swift */,
 				B89B4A6C26DA48ED0063A3DB /* UIColor+hexString.swift */,
 			);
-			name = Colorwaver;
+			name = ColorWaverETPLApp;
 			sourceTree = "<group>";
 		};
 		2D16E6871FA4F8E400B85C8A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
-				06F2C483C1AF5A46660C7C0A /* libPods-Colorwaver.a */,
-				217F752165D9DB39E4D42171 /* libPods-Colorwaver-ColorwaverTests.a */,
+				06F2C483C1AF5A46660C7C0A /* libPods-ColorWaverETPLApp.a */,
+				217F752165D9DB39E4D42171 /* libPods-ColorWaverETPLApp-ColorWaverETPLAppTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -141,9 +143,10 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
-				13B07FAE1A68108700A75B9A /* Colorwaver */,
+				8442D2992D47BE3100853F0B /* main.jsbundle */,
+				13B07FAE1A68108700A75B9A /* ColorWaverETPLApp */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
-				00E356EF1AD99517003FC87E /* ColorwaverTests */,
+				00E356EF1AD99517003FC87E /* ColorWaverETPLAppTests */,
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				10A1511C1FC5EBB00BE43BB0 /* Pods */,
@@ -156,8 +159,8 @@
 		83CBBA001A601CBA00E9B192 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				13B07F961A680F5B00A75B9A /* Colorwaver.app */,
-				00E356EE1AD99517003FC87E /* ColorwaverTests.xctest */,
+				13B07F961A680F5B00A75B9A /* ColorWaverETPLApp.app */,
+				00E356EE1AD99517003FC87E /* ColorWaverETPLAppTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -165,9 +168,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		00E356ED1AD99517003FC87E /* ColorwaverTests */ = {
+		00E356ED1AD99517003FC87E /* ColorWaverETPLAppTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "ColorwaverTests" */;
+			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "ColorWaverETPLAppTests" */;
 			buildPhases = (
 				567FE7B079BC6684ADB3E7DC /* [CP] Check Pods Manifest.lock */,
 				00E356EA1AD99517003FC87E /* Sources */,
@@ -181,14 +184,14 @@
 			dependencies = (
 				00E356F51AD99517003FC87E /* PBXTargetDependency */,
 			);
-			name = ColorwaverTests;
-			productName = ColorwaverTests;
-			productReference = 00E356EE1AD99517003FC87E /* ColorwaverTests.xctest */;
+			name = ColorWaverETPLAppTests;
+			productName = ColorWaverETPLAppTests;
+			productReference = 00E356EE1AD99517003FC87E /* ColorWaverETPLAppTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		13B07F861A680F5B00A75B9A /* Colorwaver */ = {
+		13B07F861A680F5B00A75B9A /* ColorWaverETPLApp */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "Colorwaver" */;
+			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "ColorWaverETPLApp" */;
 			buildPhases = (
 				A2C39FE673A9B443FE81E97C /* [CP] Check Pods Manifest.lock */,
 				FD10A7F022414F080027D42C /* Start Packager */,
@@ -203,9 +206,9 @@
 			);
 			dependencies = (
 			);
-			name = Colorwaver;
-			productName = Colorwaver;
-			productReference = 13B07F961A680F5B00A75B9A /* Colorwaver.app */;
+			name = ColorWaverETPLApp;
+			productName = ColorWaverETPLApp;
+			productReference = 13B07F961A680F5B00A75B9A /* ColorWaverETPLApp.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -227,7 +230,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "Colorwaver" */;
+			buildConfigurationList = 83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "ColorWaverETPLApp" */;
 			compatibilityVersion = "Xcode 12.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -240,8 +243,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				13B07F861A680F5B00A75B9A /* Colorwaver */,
-				00E356ED1AD99517003FC87E /* ColorwaverTests */,
+				13B07F861A680F5B00A75B9A /* ColorWaverETPLApp */,
+				00E356ED1AD99517003FC87E /* ColorWaverETPLAppTests */,
 			);
 		};
 /* End PBXProject section */
@@ -258,6 +261,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8442D29A2D47BE3100853F0B /* main.jsbundle in Resources */,
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 			);
@@ -286,15 +290,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Colorwaver-ColorwaverTests/Pods-Colorwaver-ColorwaverTests-resources-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-ColorWaverETPLApp-ColorWaverETPLAppTests/Pods-ColorWaverETPLApp-ColorWaverETPLAppTests-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Colorwaver-ColorwaverTests/Pods-Colorwaver-ColorwaverTests-resources-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-ColorWaverETPLApp-ColorWaverETPLAppTests/Pods-ColorWaverETPLApp-ColorWaverETPLAppTests-resources-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Colorwaver-ColorwaverTests/Pods-Colorwaver-ColorwaverTests-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ColorWaverETPLApp-ColorWaverETPLAppTests/Pods-ColorWaverETPLApp-ColorWaverETPLAppTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		20E38397E31BD907C3ECBECA /* [CP] Copy Pods Resources */ = {
@@ -303,15 +307,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Colorwaver/Pods-Colorwaver-resources-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-ColorWaverETPLApp/Pods-ColorWaverETPLApp-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Colorwaver/Pods-Colorwaver-resources-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-ColorWaverETPLApp/Pods-ColorWaverETPLApp-resources-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Colorwaver/Pods-Colorwaver-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ColorWaverETPLApp/Pods-ColorWaverETPLApp-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		42CCE0E5CF73028D175B7CE8 /* [CP] Embed Pods Frameworks */ = {
@@ -320,15 +324,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Colorwaver/Pods-Colorwaver-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-ColorWaverETPLApp/Pods-ColorWaverETPLApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Colorwaver/Pods-Colorwaver-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-ColorWaverETPLApp/Pods-ColorWaverETPLApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Colorwaver/Pods-Colorwaver-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ColorWaverETPLApp/Pods-ColorWaverETPLApp-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		567FE7B079BC6684ADB3E7DC /* [CP] Check Pods Manifest.lock */ = {
@@ -346,7 +350,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Colorwaver-ColorwaverTests-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-ColorWaverETPLApp-ColorWaverETPLAppTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -359,15 +363,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Colorwaver-ColorwaverTests/Pods-Colorwaver-ColorwaverTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-ColorWaverETPLApp-ColorWaverETPLAppTests/Pods-ColorWaverETPLApp-ColorWaverETPLAppTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Colorwaver-ColorwaverTests/Pods-Colorwaver-ColorwaverTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-ColorWaverETPLApp-ColorWaverETPLAppTests/Pods-ColorWaverETPLApp-ColorWaverETPLAppTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Colorwaver-ColorwaverTests/Pods-Colorwaver-ColorwaverTests-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ColorWaverETPLApp-ColorWaverETPLAppTests/Pods-ColorWaverETPLApp-ColorWaverETPLAppTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		A2C39FE673A9B443FE81E97C /* [CP] Check Pods Manifest.lock */ = {
@@ -385,7 +389,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Colorwaver-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-ColorWaverETPLApp-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -418,7 +422,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				00E356F31AD99517003FC87E /* ColorwaverTests.m in Sources */,
+				00E356F31AD99517003FC87E /* ColorWaverETPLAppTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -440,7 +444,7 @@
 /* Begin PBXTargetDependency section */
 		00E356F51AD99517003FC87E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 13B07F861A680F5B00A75B9A /* Colorwaver */;
+			target = 13B07F861A680F5B00A75B9A /* ColorWaverETPLApp */;
 			targetProxy = 00E356F41AD99517003FC87E /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -448,7 +452,7 @@
 /* Begin XCBuildConfiguration section */
 		00E356F61AD99517003FC87E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 44AE187957472DD329CE61E0 /* Pods-Colorwaver-ColorwaverTests.debug.xcconfig */;
+			baseConfigurationReference = 44AE187957472DD329CE61E0 /* Pods-ColorWaverETPLApp-ColorWaverETPLAppTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -458,7 +462,7 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = ColorwaverTests/Info.plist;
+				INFOPLIST_FILE = ColorWaverETPLAppTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -470,22 +474,22 @@
 					"-lc++",
 					"$(inherited)",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.etpl.colorwaver;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Colorwaver.app/Colorwaver";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ColorWaverETPLApp.app/ColorWaverETPLApp";
 			};
 			name = Debug;
 		};
 		00E356F71AD99517003FC87E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = DDF131CE188414F6F7234528 /* Pods-Colorwaver-ColorwaverTests.release.xcconfig */;
+			baseConfigurationReference = DDF131CE188414F6F7234528 /* Pods-ColorWaverETPLApp-ColorWaverETPLAppTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
 				DEVELOPMENT_TEAM = CJW62Q77E7;
-				INFOPLIST_FILE = ColorwaverTests/Info.plist;
+				INFOPLIST_FILE = ColorWaverETPLAppTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -497,37 +501,39 @@
 					"-lc++",
 					"$(inherited)",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.etpl.colorwaver;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Colorwaver.app/Colorwaver";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ColorWaverETPLApp.app/ColorWaverETPLApp";
 			};
 			name = Release;
 		};
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B6FA5584F8C20D133B0A1619 /* Pods-Colorwaver.debug.xcconfig */;
+			baseConfigurationReference = B6FA5584F8C20D133B0A1619 /* Pods-ColorWaverETPLApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = U25EWBYDXC;
 				ENABLE_BITCODE = NO;
-				INFOPLIST_FILE = Colorwaver/Info.plist;
+				INFOPLIST_FILE = ColorWaverETPLApp/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Colorwaver;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
 					"-lc++",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.etpl.colorwaver;
-				PRODUCT_NAME = Colorwaver;
+				PRODUCT_NAME = ColorWaverETPLApp;
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "Colorwaver-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "ColorWaverETPLApp-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.2;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -536,28 +542,30 @@
 		};
 		13B07F951A680F5B00A75B9A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0A424AEB40DE6E9DD1BD0AB3 /* Pods-Colorwaver.release.xcconfig */;
+			baseConfigurationReference = 0A424AEB40DE6E9DD1BD0AB3 /* Pods-ColorWaverETPLApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = U25EWBYDXC;
-				INFOPLIST_FILE = Colorwaver/Info.plist;
+				INFOPLIST_FILE = ColorWaverETPLApp/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Colorwaver;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
 					"-lc++",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.etpl.colorwaver;
-				PRODUCT_NAME = Colorwaver;
+				PRODUCT_NAME = ColorWaverETPLApp;
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "Colorwaver-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "ColorWaverETPLApp-Bridging-Header.h";
 				SWIFT_VERSION = 5.2;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
@@ -687,7 +695,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "ColorwaverTests" */ = {
+		00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "ColorWaverETPLAppTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				00E356F61AD99517003FC87E /* Debug */,
@@ -696,7 +704,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "Colorwaver" */ = {
+		13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "ColorWaverETPLApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				13B07F941A680F5B00A75B9A /* Debug */,
@@ -705,7 +713,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "Colorwaver" */ = {
+		83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "ColorWaverETPLApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				83CBBA201A601CBA00E9B192 /* Debug */,

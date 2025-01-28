@@ -1,5 +1,5 @@
 {
-  "name": "colorwaver",
+  "name": "colorwaveretplappetplapp",
   "version": "0.0.1",
   "private": true,
   "scripts": {
@@ -14,7 +14,8 @@
     "typescript": "tsc --noEmit",
     "release-ios": "scripts/release-ios.sh",
     "release-android": "scripts/release-android.sh",
-    "postinstall": "patch-package"
+    "postinstall": "patch-package",
+    "build:ios": "react-native bundle --entry-file='index.js' --bundle-output='./ios/main.jsbundle' --dev=false --platform='ios'"
   },
   "dependencies": {
     "@react-native-community/blur": "^3.6.0",
@@ -26,6 +27,7 @@
     "react-native-gesture-handler": "^1.10.3",
     "react-native-haptic-feedback": "^1.11.0",
     "react-native-reanimated": "^2.3.0-beta.2",
+    "react-native-rename": "^3.2.14",
     "react-native-safe-area-context": "^3.3.2",
     "react-native-screens": "^3.8.0",
     "react-native-static-safe-area-insets": "^2.1.1",
