@@ -14,6 +14,7 @@ import Reanimated, {
   interpolate,
   runOnJS,
   useAnimatedProps,
+  useAnimatedReaction,
   useAnimatedStyle,
   useDerivedValue,
   useSharedValue,
@@ -113,6 +114,32 @@ export function App() {
   const backgroundPercentage = useSharedValue(0);
   const detailPercentage = useSharedValue(0);
 
+  const sortedColors = useDerivedValue(() => {
+    return [
+      { color: primaryColor, percentage: primaryPercentage },
+      { color: secondaryColor, percentage: secondaryPercentage },
+      { color: detailColor, percentage: detailPercentage },
+      { color: backgroundColor, percentage: backgroundPercentage },
+    ]
+      .sort((a, b) => b.percentage.value - a.percentage.value) // Sort in descending order
+      .map((item, index) => ({
+        name: `Color ${index + 1}`, // Dynamic labeling
+        color: item.color,
+        percentage: item.percentage,
+      }));
+  }, [primaryColor, primaryPercentage, secondaryColor, secondaryPercentage, detailColor, detailPercentage, backgroundColor, backgroundPercentage]);
+  
+  // Ensure UI updates when sortedColors change
+  const displayedColors = useSharedValue(sortedColors.value);
+  
+  useAnimatedReaction(
+    () => sortedColors.value,
+    (newColors) => {
+      displayedColors.value = newColors;
+    }
+  );
+  
+
   const onCameraError = useCallback((error: CameraRuntimeError) => {
     console.error(`${error.code}: ${error.message}`, error.cause);
   }, []);
@@ -191,12 +218,45 @@ export function App() {
     [isActiveAnimation],
   );
 
+  // const frameProcessor = useFrameProcessor(
+  //   (() => {
+  //     let lastUpdateTime = 0;
+  //     const debounceInterval = 200; // Update every 200ms (adjust as needed)
+  
+  //     return frame => {
+  //       'worklet';
+  //       const currentTime = Date.now();
+  //       if (currentTime - lastUpdateTime < debounceInterval) return;
+  
+  //       lastUpdateTime = currentTime;
+  
+  //       const colors = getColorPalette(frame, 'lowest');
+  //       if (!colors) return;
+  
+  //       const { primary, secondary, background, detail } = colors;
+  
+  //       primaryColor.value = primary.color || '#000000';
+  //       primaryPercentage.value = primary.percentage || 0;
+  
+  //       secondaryColor.value = secondary.color || '#000000';
+  //       secondaryPercentage.value = secondary.percentage || 0;
+  
+  //       backgroundColor.value = background.color || '#000000';
+  //       backgroundPercentage.value = background.percentage || 0;
+  
+  //       detailColor.value = detail.color || '#000000';
+  //       detailPercentage.value = detail.percentage || 0;
+  //     };
+  //   })(),
+  //   [primaryColor, primaryPercentage, secondaryColor, secondaryPercentage, backgroundColor, backgroundPercentage, detailColor, detailPercentage],
+  // );
+
   const frameProcessor = useFrameProcessor(
     (() => {
       let lastUpdateTime = 0;
-      const debounceInterval = 200; // Update every 200ms (adjust as needed)
+      const debounceInterval = 500; // Update every 200ms
   
-      return frame => {
+      return (frame) => {
         'worklet';
         const currentTime = Date.now();
         if (currentTime - lastUpdateTime < debounceInterval) return;
@@ -208,20 +268,46 @@ export function App() {
   
         const { primary, secondary, background, detail } = colors;
   
-        primaryColor.value = primary.color || '#000000';
-        primaryPercentage.value = primary.percentage || 0;
+        const unsortedColors = [
+          { name: 'Color 1', color: primary.color || '#000000', percentage: primary.percentage || 0 },
+          { name: 'Color 2', color: secondary.color || '#000000', percentage: secondary.percentage || 0 },
+          { name: 'Color 3', color: detail.color || '#000000', percentage: detail.percentage || 0 },
+          { name: 'Color 4', color: background.color || '#000000', percentage: background.percentage || 0 },
+        ];
   
-        secondaryColor.value = secondary.color || '#000000';
-        secondaryPercentage.value = secondary.percentage || 0;
+        // 🔥 Sort colors by percentage in descending order
+        const sorted = [...unsortedColors].sort((a, b) => b.percentage - a.percentage);
   
-        backgroundColor.value = background.color || '#000000';
-        backgroundPercentage.value = background.percentage || 0;
+        // ✅ Ensure sorted array has 4 items (fallback to default color)
+        if (sorted.length < 4) {
+          while (sorted.length < 4) {
+            sorted.push({ name: 'N/A', color: '#000000', percentage: 0 });
+          }
+        }
   
-        detailColor.value = detail.color || '#000000';
-        detailPercentage.value = detail.percentage || 0;
+        // ✅ Now it's safe to access elements
+        primaryColor.value = sorted[0]?.color ?? '#000000';
+        primaryPercentage.value = sorted[0]?.percentage ?? 0;
+  
+        secondaryColor.value = sorted[1]?.color ?? '#000000';
+        secondaryPercentage.value = sorted[1]?.percentage ?? 0;
+  
+        detailColor.value = sorted[2]?.color ?? '#000000';
+        detailPercentage.value = sorted[2]?.percentage ?? 0;
+  
+        backgroundColor.value = sorted[3]?.color ?? '#000000';
+        backgroundPercentage.value = sorted[3]?.percentage ?? 0;
+  
+        // ✅ Debug Log
+        console.log('🎨 Sorted Colors:', sorted);
       };
     })(),
-    [primaryColor, primaryPercentage, secondaryColor, secondaryPercentage, backgroundColor, backgroundPercentage, detailColor, detailPercentage],
+    [
+      primaryColor, primaryPercentage,
+      secondaryColor, secondaryPercentage,
+      detailColor, detailPercentage,
+      backgroundColor, backgroundPercentage,
+    ]
   );
 
   const onTapBegin = useWorkletCallback(() => {
@@ -298,25 +384,16 @@ export function App() {
           animatedProps={cameraAnimatedProps}
         />
         <BackgroundView style={[styles.palettes, palettesStyle]}>
-          {[
-            { name: 'Color 1', color: primaryColor, percentage: primaryPercentage },
-            { name: 'Color 2', color: secondaryColor, percentage: secondaryPercentage },
-            { name: 'Color 3', color: detailColor, percentage: detailPercentage },
-            { name: 'Color 4', color: backgroundColor, percentage: backgroundPercentage },
-          ]
-            // Sort colors by percentage in descending order
-            .sort((a, b) => b.percentage.value - a.percentage.value)
-            // Ensure the labels stay consistent but align with the sorted data
-            .map((item, index) => (
-              <ColorTile
-                key={index}
-                name={`Color ${index + 1}`} // Ensures the name stays consistent
-                color={item.color} // Sorted color
-                percentage={item.percentage} // Sorted percentage
-                animationDuration={colorAnimationDuration}
-                animatedStyle={colorTileStyle}
-              />
-            ))}
+          {displayedColors.value.map((item, index) => (
+            <ColorTile
+              key={index}
+              name={item.name} // Uses dynamically updated name
+              color={item.color} // Sorted color
+              percentage={item.percentage} // Sorted percentage
+              animationDuration={colorAnimationDuration}
+              animatedStyle={colorTileStyle}
+            />
+          ))}
         </BackgroundView>
       </Reanimated.View>
     </TapGestureHandler>
