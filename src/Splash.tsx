@@ -1,15 +1,15 @@
 import type {NativeStackScreenProps} from '@react-navigation/native-stack';
 import React, {useCallback, useEffect, useState} from 'react';
-import {Alert, Image, Linking, StyleSheet, Text, View} from 'react-native';
+import {Alert, Image, Linking, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import {SafeAreaView} from 'react-native-safe-area-context';
 import {Camera} from 'react-native-vision-camera';
 import type {Routes} from './Routes';
 
-const IMAGE = require('./assets/icon.png');
+const ICON = require('../src/icons2.png');
 
 type Props = NativeStackScreenProps<Routes, 'Splash'>;
 
-export function Splash({navigation}: Props) {
+export function Splash({ navigation }: Props) {
   const [hasPermission, setHasPermission] = useState(false);
 
   const requestPermission = useCallback(async () => {
@@ -37,53 +37,55 @@ export function Splash({navigation}: Props) {
 
   return (
     <SafeAreaView style={styles.container}>
-      <Image source={IMAGE} style={styles.backgroundImage} />
+      <Text style={styles.header}>Welcome to Signalor.</Text>
 
-      <Text style={styles.header}>Welcome to{'\n'}Colorwaver.</Text>
+      <Text style={styles.permissionText}>
+        Signalor needs {'\n'} <Text style={styles.bold}>Camera permission.</Text>{' '}
+        <TouchableOpacity onPress={requestPermission}>
+          <Text style={styles.hyperlink}>Grant</Text>
+        </TouchableOpacity>
+      </Text>
 
-      <View style={styles.permissionsContainer}>
-        <Text style={styles.permissionText}>
-          Colorwaver needs <Text style={styles.bold}>Camera permission</Text>.{' '}
-          <Text style={styles.hyperlink} onPress={requestPermission}>
-            Grant
-          </Text>
-        </Text>
-      </View>
+      <Image source={ICON} style={styles.backgroundImage} />
     </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    paddingHorizontal: 15,
-    paddingVertical: 15,
-  },
-  backgroundImage: {
-    position: 'absolute',
-    width: 256,
-    height: 256,
-    opacity: 0.4,
-    bottom: 0,
-    left: -70,
-  },
-  header: {
-    fontSize: 38,
-    fontWeight: 'bold',
-    maxWidth: '80%',
-  },
-  permissionsContainer: {
-    marginTop: 30,
-  },
-  permissionText: {
-    fontSize: 18,
-    maxWidth: '80%',
-  },
-  hyperlink: {
-    color: '#007aff',
-    fontWeight: 'bold',
-  },
-  bold: {
-    fontWeight: 'bold',
-  },
-});
+    container: {
+      flex: 1,
+      backgroundColor: '#FFFFFF',
+      paddingHorizontal: 20, // Ensures left padding
+      paddingTop: 60, // Pushes content to the top
+      alignItems: 'flex-start', // Left-align all content
+    },
+    header: {
+      fontSize: 38,
+      fontWeight: 'bold',
+      color: '#000',
+      textAlign: 'left', // Ensure text is left-aligned
+    },
+    permissionsContainer: {
+      marginTop: 20, // Space between the header and permission text
+    },
+    permissionText: {
+      fontSize: 18,
+      color: '#000',
+      textAlign: 'left', // Force left alignment
+    },
+    bold: {
+      fontWeight: 'bold',
+    },
+    hyperlink: {
+      color: '#007AFF',
+      fontWeight: '600',
+    },
+    backgroundImage: {
+      position: 'absolute',
+      bottom: 20,
+      width: 256,
+      height: 256,
+      opacity: 0.4,
+      left: -70, // Keeps the image on the left
+    },
+  });

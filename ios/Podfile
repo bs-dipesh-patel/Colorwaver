@@ -3,7 +3,7 @@ require_relative '../node_modules/@react-native-community/cli-platform-ios/nativ
 
 platform :ios, '11.0'
 
-target 'ColorWaverETPLApp' do
+target 'SignalorApp' do
   config = use_native_modules!
 
   use_react_native!(
@@ -15,7 +15,7 @@ target 'ColorWaverETPLApp' do
 
   pod 'UIImageColors'
 
-  target 'ColorWaverETPLAppTests' do
+  target 'SignalorAppTests' do
     inherit! :complete
     # Pods for testing
   end
