@@ -1,4 +1,4 @@
 export type Routes = {
   App: undefined;
-  Splash: undefined;
+  Windows: undefined;
 };
